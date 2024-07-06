@@ -6,8 +6,8 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 
-# Load dataset
-data = pd.read_csv('data.csv')
+# Streamlit app layout
+st.title('Breast Cancer Risk Prediction App')
 
 # Data preprocessing
 # Check if 'Unnamed: 32' column exists and drop if it does
