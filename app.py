@@ -10,7 +10,15 @@ from sklearn.metrics import accuracy_score
 data = pd.read_csv('data.csv')
 
 # Data preprocessing
-data.drop(['id', 'Unnamed: 32'], axis=1, inplace=True)
+# Check if 'Unnamed: 32' column exists and drop if it does
+if 'Unnamed: 32' in data.columns:
+    data.drop(['Unnamed: 32'], axis=1, inplace=True)
+
+# Check if 'id' column exists and drop if it does
+if 'id' in data.columns:
+    data.drop(['id'], axis=1, inplace=True)
+
+# Label encoding for the diagnosis column
 le = LabelEncoder()
 data['diagnosis'] = le.fit_transform(data['diagnosis'])
 
